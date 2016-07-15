@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <script src="lib/requirejs/require.js" data-main="js/main"></script>
+
+  </head>
+  <!--<body ng-app="ionic_social_sharing" class="platform-ios platform-cordova platform-webview">-->
+  <body>
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+      <ion-content ng-controller="MainController">
+        <button class="button" ng-click="shareAnywhere()">Share anywhere</button>
+        <button class="button" ng-click="shareViaTwitter('Welcome to Dota 2 blog.', null, 'http://blog.dota2.com/')">Share on Twitter</button>
+        <button class="button" ng-click="shareViaFacebook('Welcome to Dota 2 blog.', 'http://tinyurl.com/qhwnwfw', 'http://blog.dota2.com/', false)">Share on Facebook</button>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
